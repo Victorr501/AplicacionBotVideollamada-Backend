@@ -3,7 +3,7 @@
     <Build />
     <Deploy />
   </Project>
-  <Project Path="AplicacionBotVideollamada-Backend.pyproj" Type="888888a0-9f3d-457c-b088-3a5042f75d52">
+  <Project Path="AplicacionBotVideollamada-Backend.pyproj" Type="888888a0-9f3d-457c-b088-3a5042f75d52" Id="bdcb7305-7c34-4fdd-90da-d1584dc2c59d">
     <Build Project="false" />
   </Project>
 </Solution>

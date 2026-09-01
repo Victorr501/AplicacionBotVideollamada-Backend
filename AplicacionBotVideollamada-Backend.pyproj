@@ -22,7 +22,18 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="src\controllers\BotController.py" />
+    <Compile Include="src\controllers\__init__.py" />
     <Compile Include="src\main.py" />
+    <Compile Include="src\modelos\reunion\ReunionInput.py" />
+    <Compile Include="src\modelos\reunion\__init__.py" />
+    <Compile Include="src\modelos\__init__.py" />
+    <Compile Include="src\repositories\__init__.py" />
+    <Compile Include="src\services\botServices\BotServices.py" />
+    <Compile Include="src\services\botServices\IBotServices.py" />
+    <Compile Include="src\services\botServices\__init__.py" />
+    <Compile Include="src\services\__init__.py" />
+    <Compile Include="src\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
@@ -37,10 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\controllers\" />
-    <Folder Include="src\models\" />
+    <Folder Include="src\modelos\" />
     <Folder Include="src\" />
+    <Folder Include="src\modelos\reunion\" />
     <Folder Include="src\repositories\" />
     <Folder Include="src\services\" />
+    <Folder Include="src\services\botServices\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
