@@ -56,6 +56,8 @@
     <Folder Include="src\services\botServices\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".env" />
+    <Content Include=".env.example" />
     <Content Include=".gitignore" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
