@@ -11,7 +11,6 @@ La documentacion esta en [notion](https://app.notion.com/p/Plan-de-desarrollo-3d
 
 Para desplegar el servidor de FASTAPI, lo primero tienes que estar en la carpeta src y ejecutar el siguiente comando en la terminal:
 
-'''markdown
+```markdown
 uvicorn main:app --reload
-'''
-
+```
