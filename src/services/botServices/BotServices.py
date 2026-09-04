@@ -8,7 +8,7 @@ load_dotenv()
 class BotServices(IBotServices):
     def __init__(self):
         self.api_key_bot = os.getenv("RECALL_API_KEY")
-        self.url_proveedor = "";
+        self.url_proveedor = "https://eu-central-1.recall.ai/api/v1/bot/";
 
     def enviar_bot(self, url_reunion: str) -> dict:
         print(f"[SERVICIO] Conectando a bot a: {url_reunion}")
@@ -17,7 +17,7 @@ class BotServices(IBotServices):
             return {"status": "error", "message": "API key no configurada"}
 
         header = {
-                "Autherization": f"Token {self.api_key_bot}",
+                "Authorization": f"Token {self.api_key_bot}",
                 "Content-Type":"application/json" 
             }
 
