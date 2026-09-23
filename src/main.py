@@ -1,6 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from controllers import BotController
+from config.database import engine, Base
+
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
       title="API Asistente de Reuniones"
