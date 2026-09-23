@@ -23,6 +23,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="src\config\database.py" />
+    <Compile Include="src\config\__init__.py" />
     <Compile Include="src\controllers\BotController.py" />
     <Compile Include="src\controllers\__init__.py" />
     <Compile Include="src\main.py" />
@@ -52,6 +54,7 @@
     <Folder Include="src\modelos\" />
     <Folder Include="src\" />
     <Folder Include="src\modelos\reunion\" />
+    <Folder Include="src\config\" />
     <Folder Include="src\repositories\" />
     <Folder Include="src\services\" />
     <Folder Include="src\services\botServices\" />
