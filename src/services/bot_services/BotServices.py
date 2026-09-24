@@ -1,10 +1,12 @@
 from .IBotServices import IBotServices
 from dotenv import load_dotenv
 from config.http_client import http_client
+import logging
 import requests
 import os
 
 load_dotenv()
+logging = logging.getLogger(__name__)
 
 class BotServices(IBotServices):
     def __init__(self):
@@ -12,7 +14,7 @@ class BotServices(IBotServices):
         self.url_proveedor = os.getenv("RECALL_API_URL")
 
     def enviar_bot(self, url_reunion: str) -> dict:
-        print(f"[SERVICIO] Conectando a bot a: {url_reunion}")
+        logging.info(f"Conectando a bot a: {url_reunion}")
 
         if not self.api_key_bot:
             return {"status": "error", "message": "API key no configurada"}
@@ -38,11 +40,11 @@ class BotServices(IBotServices):
                 }
 
         except requests.exceptions.RequestException as e:
-            print(f"[ERROR API RECALL] {e}")
+            logging.error(f"Error: {e}")
             return {"status": "error", "message": "No se pudo conectar con el proveedor de bots."}
 
     def procesar_audio(self, audio_file: dict) -> dict:
-        print(f"[SERVICIO] Procesando archivo de audio...")
+        logging.info(f"Procesando archivo de audio...")
         return {"status": "ok", "transcription": "Texto transcrito del audio"}
  
 

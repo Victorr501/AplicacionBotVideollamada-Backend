@@ -1,8 +1,8 @@
-import request
+import requests
 
 class HttpClient:
     def __init__(self):
-        self.session = request.Session()
+        self.session = requests.Session()
 
         self.session.headers.update({
             "Content-Type": "application/json"

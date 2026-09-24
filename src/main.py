@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from controllers import BotController
 from config.database import engine, Base
 
-import config.loger_config
+import config.logger_config
 
 Base.metadata.create_all(bind=engine)
 
