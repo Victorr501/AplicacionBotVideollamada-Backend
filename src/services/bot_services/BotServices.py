@@ -1,5 +1,6 @@
 from .IBotServices import IBotServices
 from dotenv import load_dotenv
+from config.http_client import http_client
 import requests
 import os
 
@@ -18,7 +19,6 @@ class BotServices(IBotServices):
 
         header = {
                 "Authorization": f"Token {self.api_key_bot}",
-                "Content-Type":"application/json" 
             }
 
         payload = {
@@ -27,10 +27,7 @@ class BotServices(IBotServices):
             }
 
         try:
-            respuesta = requests.post(self.url_proveedor, headers=header, json=payload)
-
-            respuesta.raise_for_status()
-
+            respuesta = http_client.post(self.url_proveedor, data = payload, custom_headers = header_auth)
             datos_bot = respuesta.json()
 
             return {

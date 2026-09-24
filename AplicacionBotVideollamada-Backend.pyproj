@@ -24,6 +24,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="src\config\database.py" />
+    <Compile Include="src\config\http_client.py" />
+    <Compile Include="src\config\logger_config.py" />
     <Compile Include="src\config\__init__.py" />
     <Compile Include="src\controllers\BotController.py" />
     <Compile Include="src\controllers\__init__.py" />
@@ -32,9 +34,12 @@
     <Compile Include="src\modelos\reunion\__init__.py" />
     <Compile Include="src\modelos\__init__.py" />
     <Compile Include="src\repositories\__init__.py" />
-    <Compile Include="src\services\botServices\BotServices.py" />
-    <Compile Include="src\services\botServices\IBotServices.py" />
-    <Compile Include="src\services\botServices\__init__.py" />
+    <Compile Include="src\services\ai_services\AiServices.py" />
+    <Compile Include="src\services\ai_services\IAiServices.py" />
+    <Compile Include="src\services\ai_services\__init__.py" />
+    <Compile Include="src\services\bot_services\BotServices.py" />
+    <Compile Include="src\services\bot_services\IBotServices.py" />
+    <Compile Include="src\services\bot_services\__init__.py" />
     <Compile Include="src\services\__init__.py" />
     <Compile Include="src\__init__.py" />
   </ItemGroup>
@@ -57,7 +62,8 @@
     <Folder Include="src\config\" />
     <Folder Include="src\repositories\" />
     <Folder Include="src\services\" />
-    <Folder Include="src\services\botServices\" />
+    <Folder Include="src\services\bot_services\" />
+    <Folder Include="src\services\ai_services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".env" />

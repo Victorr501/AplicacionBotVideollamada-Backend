@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, Request
-from services.botServices.BotServices import BotServices
-from services.botServices.IBotServices import IBotServices
+from services.bot_services.BotServices import BotServices
+from services.bot_services.IBotServices import IBotServices
 from modelos.Reunion.ReunionInput import ReunionInputModel
 
 router = APIRouter(prefix="/api/bot", tags=["Bot Reuniones"])
