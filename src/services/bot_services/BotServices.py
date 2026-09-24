@@ -29,7 +29,7 @@ class BotServices(IBotServices):
             }
 
         try:
-            respuesta = http_client.post(self.url_proveedor, data = payload, custom_headers = header_auth)
+            respuesta = http_client.post(self.url_proveedor, data = payload, custom_headers = header)
             datos_bot = respuesta.json()
 
             return {
