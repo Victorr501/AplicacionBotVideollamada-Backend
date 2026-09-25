@@ -6,7 +6,7 @@ import requests
 import os
 
 load_dotenv()
-logging = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 class BotServices(IBotServices):
     def __init__(self):
@@ -14,10 +14,11 @@ class BotServices(IBotServices):
         self.url_proveedor = os.getenv("RECALL_API_URL")
 
     def enviar_bot(self, url_reunion: str) -> dict:
-        logging.info(f"Conectando a bot a: {url_reunion}")
+        logger.info(f"Conectando a bot a: {url_reunion}")
 
         if not self.api_key_bot:
-            return {"status": "error", "message": "API key no configurada"}
+            logger.error("API key de Recall no configurada en el servidor")
+            raise ValueError("API key no configurada")
 
         header = {
                 "Authorization": f"Token {self.api_key_bot}",
@@ -40,11 +41,11 @@ class BotServices(IBotServices):
                 }
 
         except requests.exceptions.RequestException as e:
-            logging.error(f"Error: {e}")
-            return {"status": "error", "message": "No se pudo conectar con el proveedor de bots."}
+            logger.error(f"Error: {e}")
+            raise ConnectionError("No se pudo con el proveedor de bots")
 
     def procesar_audio(self, audio_file: dict) -> dict:
-        logging.info(f"Procesando archivo de audio...")
+        logger.info(f"Procesando archivo de audio...")
         return {"status": "ok", "transcription": "Texto transcrito del audio"}
  
 
